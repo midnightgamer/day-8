@@ -1,0 +1,233 @@
+$light-grey: #e2e0d8;
+$black: #2E3737;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+/*
+@font-face {
+    font-family: 'Analoge';
+    src: url("assets/fonts/Analogue55Regular.otf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Analoge';
+    src: url("./assets/fonts/Analogue45Light.ttf");
+    font-weight: 450;
+}
+
+@font-face {
+    font-family: 'Analoge';
+    src: url("./assets/fonts/Analogue65Medium.ttf");
+    font-weight: 650;
+}
+
+@font-face {
+    font-family: 'Analoge';
+    src: url("./assets/fonts/Analogue75Bold.ttf");
+    font-weight: 750;
+}*/
+
+html, body {
+    -webkit-user-select: none;
+    user-select: none;
+    background: #000;
+    overscroll-behavior: none;
+    margin: 0;
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+
+.App {
+    visibility: hidden;
+}
+
+header {
+    position: relative;
+    padding: 0 60px;
+    height: 60px;
+    box-sizing: border-box;
+    z-index: 10;
+
+    .header-inner {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            a {
+                font-size: 24px;
+                text-decoration: none;
+                color: $black;
+                font-weight: 700;
+            }
+        }
+
+        .nav-links {
+            ul {
+                display: flex;
+
+                li {
+                    list-style: none;
+
+                    &:not(:last-child) {
+                        margin-right: 20px;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: #C6C1B8;
+                        font-weight: 500;
+                    }
+
+                    &:first-child {
+                        a {
+                            font-weight: 600;
+                            color: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+
+    .col-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 65%;
+        background-color: $light-grey;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .hero-text {
+            position: relative;
+            z-index: 11;
+            min-width: 500px;
+
+            & > span {
+                text-transform: uppercase;
+                color: #C69270;
+                font-weight: 700;
+                font-size: 12px;
+                display: block;
+                margin-left: 40px;
+            }
+
+            h2 {
+
+                margin: 10px 0;
+                font-size: 120px;
+                font-weight: 300;
+                line-height: 100px;
+                width: 100%;
+
+                .line {
+                    position: relative;
+                    overflow: hidden;
+                    height: 120px;
+                    width: 100%;
+                }
+
+                span {
+                    display: block;
+                    position: absolute;
+                }
+
+                span.bold {
+                    font-weight: 500;
+                }
+            }
+
+            .lead-text {
+                margin-left: 40px;
+
+                span {
+                    display: block;
+                }
+            }
+            a{
+                text-decoration: none;
+            }
+            a p {
+                margin-left: 60px;
+                text-decoration: none;
+                position: relative;
+                color: #5E9454;
+
+                &::before {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -20px;
+                    transform: translate(-50%);
+                    height: 2px;
+                    width: 30px;
+                    background-color: #5E9454;
+                }
+            }
+        }
+    }
+
+    .col-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+        width: 35%;
+        height: 100%;
+
+        .img-container {
+            position: absolute;
+            top: 50%;
+            width: 750px;
+            height: 450px;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            img {
+                position: absolute;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+
+        .pagination {
+            position: absolute;
+            right: 20px;
+            bottom: 180px;
+            transform: rotate(-90deg);
+
+            span {
+                display: inline-block;
+                margin-right: 25px;
+                font-weight: 700;
+                color: $light-grey;
+
+                &:nth-child(2) {
+                    color: $black;
+                }
+
+
+            }
+        }
+    }
+}
